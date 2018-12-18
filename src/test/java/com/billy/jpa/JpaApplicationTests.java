@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ContextConfiguration;
@@ -43,19 +44,19 @@ public class JpaApplicationTests {
 		departmentRepository.deleteAll();
 		roleRepository.deleteAll();
 		Department department = new Department();
-		long a1 =100;
+		long a1 =4;
 		department.setId(a1);
-		department.setName("soft");
+		department.setName("霸道总裁1");
 		departmentRepository.save(department);
 		Role role = new Role();
-		long a2 =110;
+		long a2 =4;
 		role.setId(a2);
-		role.setName("经理");
+		role.setName("霸道总裁2");
 		roleRepository.save(role);
 		User user = new User();
-		long a3 =115;
+		long a3 =6;
 		user.setId(a3);
-		user.setName("billy");
+		user.setName("霸道总裁3");
 		userRepository.save(user);
 
 //		Assert.notNull(department);
@@ -67,28 +68,12 @@ public class JpaApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		Pageable pageable = new PageRequest(0,10,new Sort(Sort.Direction.ASC,"id"));
-//		Pageable pageable = new PageRequest(0,3, Sort.Direction.DESC,"id");
-
-//		userRepository.deleteAll();
-//		departmentRepository.deleteAll();
-//		roleRepository.deleteAll();
-//		Department department = new Department();
-//		long a1 =100;
-//		department.setId(a1);
-//		department.setName("开发部");
-//		departmentRepository.save(department);
-//		Role role = new Role();
-//		long a2 =110;
-//		role.setId(a2);
-//		role.setName("总监");
-//		roleRepository.save(role);
-//		User user = new User();
-//		long a3 =115;
-//		user.setId(a3);
-//		user.setName("张三");
-//		userRepository.save(user);
-
+//		Pageable pageable = new PageRequest(0,10,new Sort(Sort.Direction.ASC,"id"));
+//        Pageable pageable = new PageRequest(0,10,new Sort(Sort.Direction.ASC,"id"));
+//        Page<User> page = userRepository.findAll(pageable);
+//        for(User user:page.getContent()){
+//            logger.info("===user=== user name:{},department name:{},role name:{}",user.getName(),user.getDepartment().getName(),user.getRoles().get(0).getName());
+//        }
 	}
 }
 

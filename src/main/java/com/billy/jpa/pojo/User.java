@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "user")
 public class User implements java.io.Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
