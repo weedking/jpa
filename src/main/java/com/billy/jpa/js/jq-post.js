@@ -5,8 +5,10 @@
 $('#register').on('submit', function(e) {           // When form is submitted
   e.preventDefault();                               // Prevent it being sent
   var details = $('#register').serialize();         // Serialize form data
-  $.get('http://localhost:8080/t1/department', details, function(data) {  // Use $.post() to send it
-    $('#content').html(data);                    // Where to display result
-
+  $.get('http://localhost:8080/t1/department', details, function(data,status) {  // Use $.post() to send it
+    // $('#content').toString(data);                  // Where to display result
+    // alert("Data: " + data + "\nStatus: " + status);
+    window.location.replace("http://localhost:8080/t1/allDepartment");
   });
+
 });

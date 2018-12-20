@@ -33,18 +33,6 @@ public class MyController {
         return "保存部门";
     }
 
-//    @GetMapping(path = "/department")
-//    @RequestMapping(value = "/department",method = RequestMethod.GET)
-//    public String addDepartment(@RequestParam(value = "did") Long id
-//            , @RequestParam(value = "dname") String name){
-//        System.out.println("did:"+id);
-//        System.out.println("dname"+name);
-//        Department d = new Department();
-//        d.setId(id);
-//        d.setName(name);
-//        departmentRepository.save(d);
-//        return "保存部门";
-//    }
 
     @GetMapping(path="/allDepartment")
     public @ResponseBody Iterable<Department> getAllDepartment() {
@@ -58,14 +46,5 @@ public class MyController {
         return "999";
     }
 
-//    @GetMapping("/billy")
-//    public String departmentForm(Model model){
-//        model.addAttribute("department",new Department());
-//        return "部门";
-//    }
-//
-//    @PostMapping("/department")
-//    public String departmentSubmit(@ModelAttribute Department department){
-//        return "结果";
-//    }
+
 }

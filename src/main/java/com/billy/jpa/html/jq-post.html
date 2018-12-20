@@ -17,7 +17,7 @@
       </div>
       <div class="half">
         <!--<form id="register" action="http://javascriptbook.com/code/c08/register.php" method="post">-->
-          <form id="register" action="/t1/allDepartment"  method="get">
+          <form id="register" action="../html/result.html"  method="get">
           <h2>Register</h2>
             <label for="did">部门ID</label><input type="text" id="did" name="did" />
             <label for="dname">部门名称</label><input type="text" id="dname" name="dname" />
@@ -25,7 +25,8 @@
             <!--<label for="rname">角色名称</label><input type="text" id="rname" name="rname" />-->
             <!--<label for="uid">用户ID</label><input type="text" id="uid" name="uid" />-->
             <!--<label for="uname">用户名称</label><input type="text" id="uname" name="uname" />-->
-          <input type="submit" value="提交" />
+          <input type="submit" value="提交2" onclick='window.open("http://localhost:8080/t1/allDepartment")'/>
+            <!--<input type="submit" onclick='window.open("http://localhost:8080/t1/allDepartment")' />-->
         </form>
       </div>
     </section>
