@@ -5,7 +5,8 @@
 $('#register').on('submit', function(e) {           // When form is submitted
   e.preventDefault();                               // Prevent it being sent
   var details = $('#register').serialize();         // Serialize form data
-  $.post('/t1/department', details, function(data) {  // Use $.post() to send it
-    $('#register').html(data);                    // Where to display result
+  $.get('http://localhost:8080/t1/department', details, function(data) {  // Use $.post() to send it
+    $('#content').html(data);                    // Where to display result
+
   });
 });

@@ -24,14 +24,27 @@ public class MyController {
     RoleRepository roleRepository;
 
     @GetMapping(path = "/department")
-    public @ResponseBody String addDepartment(@RequestParam Long id
-            , @RequestParam String name){
+    public @ResponseBody String addDepartment(@RequestParam Long did
+            , @RequestParam String dname){
         Department d = new Department();
-        d.setId(id);
-        d.setName(name);
+        d.setId(did);
+        d.setName(dname);
         departmentRepository.save(d);
         return "保存部门";
     }
+
+//    @GetMapping(path = "/department")
+//    @RequestMapping(value = "/department",method = RequestMethod.GET)
+//    public String addDepartment(@RequestParam(value = "did") Long id
+//            , @RequestParam(value = "dname") String name){
+//        System.out.println("did:"+id);
+//        System.out.println("dname"+name);
+//        Department d = new Department();
+//        d.setId(id);
+//        d.setName(name);
+//        departmentRepository.save(d);
+//        return "保存部门";
+//    }
 
     @GetMapping(path="/allDepartment")
     public @ResponseBody Iterable<Department> getAllDepartment() {
